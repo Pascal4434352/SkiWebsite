@@ -1,2 +1,0 @@
-# SkiWebsite
-Yasmin IT Projekt

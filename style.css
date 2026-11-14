@@ -1,30 +1,191 @@
 /* Gemeinsames Design für alle drei Seiten */
-:root { --dunkel: #172033; --akzent: #3977e8; --hell: #f4f6fb; --text: #263247; --weiss: #ffffff; }
-* { box-sizing: border-box; }
-body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: var(--hell); color: var(--text); line-height: 1.6; }
-header { background: var(--dunkel); color: var(--weiss); padding: 28px 20px; text-align: center; }
-header h1 { margin: 0 0 8px; font-size: clamp(1.8rem, 4vw, 2.6rem); }
-header p { margin: 0; color: #d8e1f2; }
-nav { background: #24324d; display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 12px; }
-nav a { color: var(--weiss); text-decoration: none; padding: 9px 16px; border-radius: 6px; font-weight: bold; }
-nav a:hover, nav a:focus { background: var(--akzent); outline: none; }
-main { width: min(1000px, 92%); margin: 32px auto; }
-section, .karte { background: var(--weiss); padding: 24px; margin-bottom: 22px; border-radius: 12px; box-shadow: 0 3px 14px rgba(20,35,60,.07); }
-h2 { color: var(--dunkel); margin-top: 0; }
-.bilderreihe { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; }
-.bilderreihe figure { margin: 0; }
-.bilderreihe img { width: 100%; height: 210px; object-fit: cover; border-radius: 9px; display: block; }
-figcaption { margin-top: 7px; color: #596579; font-size: .92rem; }
-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
-th, td { border: 1px solid #d5dbea; padding: 11px; text-align: left; }
-th { background: #eaf0fc; }
-form { display: grid; gap: 14px; }
-label { font-weight: bold; }
-input[type="text"], input[type="email"], textarea { width: 100%; padding: 11px; border: 1px solid #b9c4d6; border-radius: 6px; font: inherit; }
-textarea { min-height: 130px; resize: vertical; }
-.auswahl label { font-weight: normal; margin-right: 16px; }
-button { width: fit-content; border: 0; background: var(--akzent); color: white; padding: 12px 22px; border-radius: 7px; font-size: 1rem; font-weight: bold; cursor: pointer; }
-button:hover { background: #245fc5; }
-#formularmeldung { font-weight: bold; color: #176b3a; }
-footer { text-align: center; background: var(--dunkel); color: #d8e1f2; padding: 18px; margin-top: 40px; }
-@media (max-width: 600px) { section, .karte { padding: 18px; } th, td { padding: 8px; font-size: .92rem; } }
+:root {
+    --dunkel: #172033;
+    --akzent: #3977e8;
+    --hell: #f4f6fb;
+    --text: #263247;
+    --weiss: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--hell);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+header {
+    background: var(--dunkel);
+    color: var(--weiss);
+    padding: 28px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 8px;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+header p {
+    margin: 0;
+    color: #d8e1f2;
+}
+
+nav {
+    background: #24324d;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px;
+}
+
+nav a {
+    color: var(--weiss);
+    text-decoration: none;
+    padding: 9px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a:focus {
+    background: var(--akzent);
+    outline: none;
+}
+
+main {
+    width: min(1000px, 92%);
+    margin: 32px auto;
+}
+
+section, .karte {
+    background: var(--weiss);
+    padding: 24px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 14px rgba(20, 35, 60, 0.07);
+}
+
+h2 {
+    color: var(--dunkel);
+    margin-top: 0;
+}
+
+h3 {
+    color: var(--akzent);
+}
+
+.bilderreihe {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+}
+
+.bilderreihe figure {
+    margin: 0;
+}
+
+.bilderreihe img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 9px;
+    display: block;
+}
+
+figcaption {
+    margin-top: 7px;
+    color: #596579;
+    font-size: 0.92rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+
+th, td {
+    border: 1px solid #d5dbea;
+    padding: 11px;
+    text-align: left;
+}
+
+th {
+    background: #eaf0fc;
+}
+
+form {
+    display: grid;
+    gap: 14px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #b9c4d6;
+    border-radius: 6px;
+    font: inherit;
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.auswahl label {
+    font-weight: normal;
+    margin-right: 16px;
+}
+
+button {
+    width: fit-content;
+    border: 0;
+    background: var(--akzent);
+    color: white;
+    padding: 12px 22px;
+    border-radius: 7px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #245fc5;
+}
+
+#formularmeldung {
+    font-weight: bold;
+    color: #176b3a;
+}
+
+footer {
+    text-align: center;
+    background: var(--dunkel);
+    color: #d8e1f2;
+    padding: 18px;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    section, .karte {
+        padding: 18px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 0.92rem;
+    }
+}
