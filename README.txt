@@ -1,7 +1,4 @@
-SKI-PORTFOLIO – ZWEITE VERSION
-
-Die zweite Version verwendet dasselbe Grundgerüst und Design. Das Thema wurde auf
-Skifahren geändert.
+SKI-PORTFOLIO – Yasmin Gündel
 
 Dateien:
 - index.html: Startseite
