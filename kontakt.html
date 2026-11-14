@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Portfolio | Kontakt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1>Kontakt</h1><p>Schreib mir gerne eine Nachricht</p></header>
+    <nav>
+        <a href="index.html">Startseite</a>
+        <a href="thema.html">Skifahren</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <main>
+        <section>
+            <h2>Kontaktformular</h2>
+            <p>Fülle das Formular aus. Die Pflichtfelder müssen ausgefüllt werden.</p>
+            <form id="kontaktformular">
+                <div><label for="name">Dein Name:</label><input type="text" id="name" name="name" required></div>
+                <div><label for="email">Deine E-Mail-Adresse:</label><input type="email" id="email" name="email" required></div>
+                <div class="auswahl">
+                    <p><strong>Worum geht es?</strong></p>
+                    <label><input type="radio" name="grund" value="Frage" required> Frage</label>
+                    <label><input type="radio" name="grund" value="Feedback"> Feedback</label>
+                    <label><input type="radio" name="grund" value="Sonstiges"> Sonstiges</label>
+                </div>
+                <div><label for="nachricht">Deine Nachricht:</label><textarea id="nachricht" name="nachricht" placeholder="Schreibe hier deine Nachricht ..." required></textarea></div>
+                <button type="submit">Nachricht absenden</button>
+                <p id="formularmeldung" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+    <footer><p>&copy; 2026 Mein persönliches Portfolio</p></footer>
+    <script>
+        // Lokale Demonstration: Das Formular zeigt eine Bestätigung an.
+        // Ohne Server wird keine echte E-Mail versendet.
+        document.getElementById("kontaktformular").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value.trim();
+            document.getElementById("formularmeldung").textContent =
+                "Vielen Dank, " + name + "! Das Formular wurde erfolgreich getestet.";
+            this.reset();
+        });
+    </script>
+</body>
+</html>
